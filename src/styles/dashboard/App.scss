@@ -1,76 +1,99 @@
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  width: 512px;
+  height: 512px;
+  background-color: #f43c46;
+  border-radius: 100px;
+  box-shadow: inset 0px -10px #B6333A;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-text {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  text-align: center;
-}
 
-.App-link {
-  color: #61dafb;
-}
+  h1 {
+    position: absolute;
+    z-index: 1;
+    background-color: #f43c46;
+    width: 250px;
+    height: 70px;
+    margin-top: 157px;
+    border-bottom-left-radius: 50px 50px;
+    border-bottom-right-radius: 50px 50px;
+    box-shadow: 0px 10px 10px #CDCDCE;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 50px;
+    z-index: 2;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-.header-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.header-text {
   h2 {
-    text-align: left;
-    margin-left: 10px;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: 450px;
+    height: 300px;
+    border-radius: 100px;
+    margin-top: 480px;
+    box-shadow: inset 5px 30px #CDCDCE,
+    inset -5px 30px #CDCDCE,
+    inset 0px -5px #CDCDCE;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 150px;
   }
 }
 
-.header-buttons {
+.App-buttons {
   display: flex;
   flex-direction: row;
-}
 
-header {
   button {
-    width: 150px;
-    height: 40px;
-    margin-left: 30px;
+    width: 100px;
+    height: 100px;
+    margin-top: 380px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    border-color: transparent;
+    border-radius: 100%;
+
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    border-color: transparent;
+    color: #f43c46;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: yellow;
+    opacity: 0.6;
+    transition: all 1s ease-out;
   }
 
   button:first-child {
-    background-color: green;
+    font-size: 100px;
+    padding-bottom: 20px;
   }
 
   button:nth-child(2) {
-    background-color: red;
+    font-size: 100px;
+    padding-bottom: 20px;
   }
 
   button:last-child {
-    background-color: yellow;
+    font-size: 20px;
+    font-weight: bold;
   }
 }
