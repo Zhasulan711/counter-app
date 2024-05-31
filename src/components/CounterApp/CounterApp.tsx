@@ -1,4 +1,4 @@
-import "../styles/dashboard/CounterApp.scss";
+import "../../styles/dashboard/CounterApp.scss";
 import React, { useState, useEffect } from "react";
 
 export const Counter = () => {
