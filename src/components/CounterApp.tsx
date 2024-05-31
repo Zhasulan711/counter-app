@@ -1,57 +1,38 @@
-import "../styles/dashboard/App.scss";
-import React, { useState, useEffect, useTransition } from "react";
+import "../styles/dashboard/CounterApp.scss";
+import React, { useState, useEffect } from "react";
 
-export const CounterApp = () => {
+export const Counter = () => {
   const [count, setCount] = useState<number>(0);
-  const [isPending, startTransition] = useTransition();
 
-  const handleIncreasing = () => {
-    startTransition(() => {
-      setCount(count + 5);
-      localStorage.setItem("count", JSON.stringify(count + 5));
-    });
-  };
+  const handleCounterChange = (amount: number) => {
+    setCount((prevCount) => {
+      const newCount = Math.max(prevCount + amount, 0);
+      localStorage.setItem("count", JSON.stringify(newCount));
 
-  const handleDecreasing = () => {
-    startTransition(() => {
-      setCount(count - 5);
-      localStorage.setItem("count", JSON.stringify(count - 5));
+      return newCount;
     });
   };
 
   const handleReset = () => {
-    startTransition(() => {
-      setCount(0);
-      localStorage.removeItem("count");
-    });
+    setCount(0);
+    localStorage.removeItem("count");
   };
 
   useEffect(() => {
     const receivingCount = localStorage.getItem("count");
-
-    let processingCount = "";
-
-    receivingCount !== null ? processingCount = JSON.parse(receivingCount) : processingCount = "";
-
-    processingCount ? setCount(parseInt(processingCount)) : setCount(0);
+    setCount(receivingCount !== null ? JSON.parse(receivingCount) : 0);
   }, []);
 
   return (
-    <div className="App">
-      <div className="App-text">
+    <div className="CounterApp">
+      <div className="CounterApp-text">
         <h1>Counter</h1>
         <h2>{count}</h2>
       </div>
-      <div className="App-buttons">
-        <button onClick={handleIncreasing} disabled={isPending}>
-          +
-        </button>
-        <button onClick={handleDecreasing} disabled={isPending}>
-          -
-        </button>
-        <button onClick={handleReset} disabled={isPending}>
-          Reset
-        </button>
+      <div className="CounterApp-buttons">
+        <button onClick={() => handleCounterChange(5)}>+</button>
+        <button onClick={() => handleCounterChange(-5)}>-</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
