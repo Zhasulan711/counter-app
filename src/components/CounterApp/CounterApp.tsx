@@ -1,26 +1,15 @@
-import "../../styles/dashboard/CounterApp.scss";
+import "../../styles/root/CounterApp.scss";
 import React, { useState, useEffect } from "react";
+import { ResetButton } from "./ResetButton.tsx";
+import { CounterChange } from "./CounterChange.tsx";
 
 export const Counter = () => {
   const [count, setCount] = useState<number>(0);
 
-  const handleCounterChange = (amount: number) => {
-    setCount((prevCount) => {
-      const newCount = Math.max(prevCount + amount, 0);
-      localStorage.setItem("count", JSON.stringify(newCount));
-
-      return newCount;
-    });
-  };
-
-  const handleReset = () => {
-    setCount(0);
-    localStorage.removeItem("count");
-  };
-
+  // Get count from localStorage
   useEffect(() => {
-    const receivingCount = localStorage.getItem("count");
-    setCount(receivingCount !== null ? JSON.parse(receivingCount) : 0);
+    const localStorageCount = JSON.parse(localStorage.getItem("count") || "0");
+    setCount(localStorageCount);
   }, []);
 
   return (
@@ -30,9 +19,8 @@ export const Counter = () => {
         <h2>{count}</h2>
       </div>
       <div className="CounterApp-buttons">
-        <button onClick={() => handleCounterChange(5)}>+</button>
-        <button onClick={() => handleCounterChange(-5)}>-</button>
-        <button onClick={handleReset}>Reset</button>
+        <CounterChange setCount={setCount} />
+        <ResetButton setCount={setCount} />
       </div>
     </div>
   );
