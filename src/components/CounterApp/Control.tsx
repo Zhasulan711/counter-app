@@ -15,8 +15,8 @@ export const Control: React.FC<CounterProps> = ({ setCount }) => {
     });
   };
 
-  const handleIncrease = () => handleCounterChange(+5);
-  const handleDecrease = () => handleCounterChange(-5);
+  const handleIncrease = () => handleCounterChange(+1);
+  const handleDecrease = () => handleCounterChange(-1);
 
   return (
     <>

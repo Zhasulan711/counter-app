@@ -140,3 +140,38 @@
     }
   }
 }
+
+// mobile adaptive design
+@media (max-width: 440px) {
+  .CounterApp {
+    width: 320px;
+    height: 512px;
+  }
+
+  .CounterApp-text {
+    h2 {
+      width: 270px;
+    }
+  }
+
+  .CounterApp-buttons {
+    padding-left: 10px;
+    button {
+      margin-right: 10px;
+      margin-top: 380px;
+      width: 80px;
+      height: 80px;
+      margin-left: 0px;
+
+      &:first-child,
+      &:nth-child(2) {
+        font-size: 40px;
+        padding-bottom: 10px;
+      }
+
+      &:last-child {
+        font-size: 20px;
+      }
+    }
+  }
+}
