@@ -6,7 +6,7 @@ export const ResetButton: React.FC<CounterProps> = ({ setCount }) => {
   const handleReset = () => {
     // Update state with 0 added
     setCount(0);
-    
+
     // Remove count from localStorage
     localStorage.removeItem("count");
   };

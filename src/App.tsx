@@ -1,5 +1,4 @@
-import { Counter } from "./components/CounterApp/CounterApp.tsx";
-import React from "react";
+import { Counter } from "./components/CounterApp/CounterApp";
 
 export const App = () => {
   return <Counter />;

@@ -2,7 +2,7 @@ import React from "react";
 
 import { CounterProps } from "../../interfaces/CounterProps";
 
-export const CounterChange: React.FC<CounterProps> = ({ setCount }) => {
+export const Control: React.FC<CounterProps> = ({ setCount }) => {
   const handleCounterChange = (amount: number) => {
     setCount((prevCount) => {
       const newCount = Math.max(prevCount + amount, 0);

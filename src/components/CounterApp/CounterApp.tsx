@@ -1,7 +1,7 @@
 import "../../styles/root/CounterApp.scss";
-import React, { useState, useEffect } from "react";
-import { ResetButton } from "./ResetButton.tsx";
-import { CounterChange } from "./CounterChange.tsx";
+import { useState, useEffect } from "react";
+import { ResetButton } from "./ResetButton";
+import { Control } from "./Control";
 
 export const Counter = () => {
   const [count, setCount] = useState<number>(0);
@@ -19,7 +19,7 @@ export const Counter = () => {
         <h2>{count}</h2>
       </div>
       <div className="CounterApp-buttons">
-        <CounterChange setCount={setCount} />
+        <Control setCount={setCount} />
         <ResetButton setCount={setCount} />
       </div>
     </div>
