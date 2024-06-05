@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CounterProps } from "../../interfaces/CounterProps";
+import { CounterProps } from "../../shared/interfaces/CounterProps";
 
 export const Control: React.FC<CounterProps> = ({ setCount }) => {
   const handleCounterChange = (amount: number) => {
