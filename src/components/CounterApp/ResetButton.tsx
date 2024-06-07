@@ -1,8 +1,8 @@
 import React from "react";
 
-import { CounterProps } from "../../shared/interfaces/CounterProps";
+import { CountProps } from "../../shared/interface";
 
-export const ResetButton: React.FC<CounterProps> = ({ setCount }) => {
+export const ResetButton: React.FC<CountProps> = ({ setCount }) => {
   const handleReset = () => {
     // Update state with 0 added
     setCount(0);

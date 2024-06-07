@@ -1,8 +1,8 @@
 import React from "react";
 
-import { CounterProps } from "../../shared/interfaces/CounterProps";
+import { CountProps } from "../../shared/interface";
 
-export const Control: React.FC<CounterProps> = ({ setCount }) => {
+export const Control: React.FC<CountProps> = ({ setCount }) => {
   const handleCounterChange = (amount: number) => {
     setCount((prevCount) => {
       const newCount = Math.max(prevCount + amount, 0);
